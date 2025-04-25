@@ -5,21 +5,30 @@ style_modern.set_modern_style()
 
 st.markdown('<div class="welcome-banner">Willkommen in der Schichtplan-App – dein digitaler Dienstplan</div>', unsafe_allow_html=True)
 st.title("Schichtplan App - Modern UI")
-st.subheader("Loginbereich")
 
 rolle = st.radio("Login als:", ["Mitarbeiter", "Admin"])
 
-# Adminbereich
 if rolle == "Admin":
     admin_passwort = st.text_input("Admin-Passwort", type="password")
     if admin_passwort == "admin123":
         st.success("Admin eingeloggt.")
-        st.markdown("### Adminbereich")
-        st.info("Hier kannst du demnächst: Monatsabschlüsse erstellen, Wünsche freigeben, Profile verwalten und mehr.")
+        admin_option = st.selectbox("Adminbereich wählen:", ["Übersicht", "Monatsberichte", "Wünsche verwalten", "Nutzerverwaltung"])
+
+        if admin_option == "Übersicht":
+            st.markdown("### Admin-Übersicht")
+            st.write("Hier findest du eine Übersicht über alle Mitarbeiter, Schichten und Anträge.")
+        elif admin_option == "Monatsberichte":
+            st.markdown("### Monatsberichte")
+            st.write("Hier kannst du Monatsabschlüsse erstellen und als PDF exportieren.")
+        elif admin_option == "Wünsche verwalten":
+            st.markdown("### Wunsch-/Urlaubsanträge")
+            st.write("Hier siehst du alle offenen Anträge und kannst sie genehmigen.")
+        elif admin_option == "Nutzerverwaltung":
+            st.markdown("### Benutzerverwaltung")
+            st.write("Hier kannst du PINs, Rollen und Profile verwalten.")
     elif admin_passwort:
         st.error("Falsches Passwort.")
 
-# Mitarbeiterbereich
 else:
     benutzername = st.text_input("Benutzername")
     pin = st.text_input("PIN", type="password")

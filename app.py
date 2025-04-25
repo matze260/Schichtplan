@@ -3,6 +3,8 @@ import streamlit as st
 import style_modern
 style_modern.set_modern_style()
 
+st.markdown('<div class="welcome-banner">Willkommen in der Schichtplan-App – dein digitaler Dienstplan</div>', unsafe_allow_html=True)
+
 st.title("Schichtplan App - Modern UI")
 st.subheader("Loginbereich")
 

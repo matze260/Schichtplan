@@ -4,14 +4,36 @@ import streamlit as st
 def set_modern_style():
     st.markdown("""
     <style>
-    body { background-color: #f7f9fc; }
-    .stApp { font-family: "Segoe UI", sans-serif; color: #333; }
+    body { background-color: #f4f7fa; margin: 0; }
+    .stApp { font-family: 'Segoe UI', sans-serif; color: #2c3e50; }
+    header { display: none; }
     h1, h2, h3 { color: #2c3e50; }
-    .css-1cpxqw2, .css-1d391kg { background-color: #ffffff !important; border: 1px solid #e0e0e0 !important; border-radius: 8px; padding: 1rem; }
-    .stButton > button { background-color: #2c7be5; color: white; padding: 0.5em 1.5em; border-radius: 5px; border: none; font-weight: bold; }
-    .stButton > button:hover { background-color: #1a5dcc; }
-    .stTextInput > div > input { background-color: #f0f4f8; border-radius: 5px; }
-    .stSelectbox > div > div { background-color: #f0f4f8; border-radius: 5px; }
+    .stButton > button {
+        background-color: #1a73e8;
+        color: white;
+        padding: 0.5em 1.5em;
+        border-radius: 6px;
+        border: none;
+        font-weight: 600;
+        font-size: 15px;
+    }
+    .stButton > button:hover {
+        background-color: #1558b0;
+    }
+    .stTextInput input, .stSelectbox div[data-baseweb="select"] {
+        background-color: #f0f4f8;
+        border-radius: 5px;
+    }
     .stDataFrame { font-size: 0.9rem; }
+    .welcome-banner {
+        background: linear-gradient(90deg, #2c7be5, #48a0f8);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 6px;
+        margin-bottom: 1.5rem;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+    }
     </style>
     """, unsafe_allow_html=True)
